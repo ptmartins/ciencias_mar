@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/layout.astro';
+import { Image } from "astro:assets";
+import { teamEntries } from "../lib/contentful.js";
+
+const entries = await teamEntries();
+console.log(entries[0].fields);
+
+---
+
+<Layout>
+	<section class="section section--team">
+		<h1 class="page__title">A Equipa</h1>
+		
+		<div class="team">
+			{entries.map((item) => (
+				<div class="card">
+					<div class="card__thumb">
+						{/* <Image src={`https:${ item.fields.image?.fields?.file?.url }`} alt="deded" width="300" height="180" class="thumb__image"/> */}
+					</div>
+					<div class="card__body">
+						<h2>{ item.fields.name }</h2>
+						<span class="role">{ item.fields.role }</span>
+						<div class="card__social">
+							{item.fields.email ? <span> { item.fields.email } </span> : null }
+							{item.fields.linkedin ? <span> { item.fields.linkedin } </span> : null }
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+
+	</section>
+</Layout>
+
+<style>
+
+	.team {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+	}
+
+	.card {
+		border-radius: 5px; 
+
+		&:hover {
+			.card__thumb {
+				filter: grayscale(0%);
+			}
+		}
+	}
+
+	.card__thumb {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		filter: grayscale(100%);
+		height: 240px;
+		overflow: hidden;
+		transition: var(--default-transition);
+	}
+
+	.thumb__image {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.card__body, 
+	.overlay {
+		padding: .75rem;
+	}
+
+	.role {
+		font-style: italic;
+		opacity: .75;
+	}
+</style>

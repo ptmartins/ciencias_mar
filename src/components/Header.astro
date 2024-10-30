@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Navigation from '../components/Navigation.astro'; 
+import logo from '../images/logo.webp';
+---
+
+<header class="header">
+    <div class="wrapper wrapper--header">
+        <div class="logo">
+            <Image src={ logo } alt="APCM Logo" aria-hidden="true" class="logo__image"/>
+        </div>
+        <Navigation />
+        <div class="cta">
+            <button class="btn">Participar</button>
+            <button class="btn btn--cta">Donativos</button>
+        </div>
+    </div>
+</header>
+
+<style>
+    
+    .wrapper--header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        height: 120px;
+        width: 120px;
+    }
+
+    .logo__image {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .cta {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+</style>
