@@ -4,8 +4,8 @@ import { Image } from "astro:assets";
 import { teamEntries } from "../lib/contentful.js";
 import fallbackImage from '../images/unknown_user.svg';
 
-const entries = await teamEntries();
-console.log(entries[0].fields);
+const teamData = await teamEntries();
+const entries = teamData.reverse();
 
 ---
 
@@ -43,7 +43,7 @@ console.log(entries[0].fields);
 
 	.team {
 		display: grid;
-		gap: 1.5rem;
+		gap: 2rem;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
 	}
 
