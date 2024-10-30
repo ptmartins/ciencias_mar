@@ -2,6 +2,7 @@
 import Layout from '../layouts/layout.astro';
 import { Image } from "astro:assets";
 import { teamEntries } from "../lib/contentful.js";
+import fallbackImage from '../images/unknown_user.svg';
 
 const entries = await teamEntries();
 console.log(entries[0].fields);
@@ -16,7 +17,12 @@ console.log(entries[0].fields);
 			{entries.map((item) => (
 				<div class="card">
 					<div class="card__thumb">
-						{/* <Image src={`https:${ item.fields.image?.fields?.file?.url }`} alt="deded" width="300" height="180" class="thumb__image"/> */}
+						{item.fields.image?.fields?.file?.url ? (
+								<Image src={`https:${ item.fields.image?.fields?.file?.url }`} alt={ `Foto - ${ item.fields.name }` } width="300" height="180" class="thumb__image"/>
+							) : (
+								<Image src={ fallbackImage } alt={ `Foto - ${ item.fields.name }` } width="300" height="180" class="fallbackImage"/>
+							)
+						}
 					</div>
 					<div class="card__body">
 						<h2>{ item.fields.name }</h2>
@@ -75,4 +81,12 @@ console.log(entries[0].fields);
 		font-style: italic;
 		opacity: .75;
 	}
+
+	.fallbackImage {
+		height: 100%;
+		object-fit: contain;
+		object-position: center;
+		width: 100%;
+	}
+
 </style>
