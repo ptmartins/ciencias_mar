@@ -8,22 +8,22 @@ import Image4 from '../images/image4.jpg';
 
 const slides = [
     {
-        imagePath: 'https://images.unsplash.com/photo-1512164599836-a491ef79f6d5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        imagePath: 'https://images.unsplash.com/photo-1520197399711-cb9407f3e551?q=80&w=5300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'Lorem ipsum',
         txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
     },
     {
-        imagePath: 'https://unsplash.com/photos/a-whales-tail-flups-out-of-the-water-T-jAfseP0dc',
+        imagePath: 'https://images.unsplash.com/photo-1526485796220-1c4ad338f85f?q=80&w=4709&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'Lorem ipsum',
         txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
     },
     {
-        imagePath: 'https://unsplash.com/photos/brown-fish-diving-in-blue-water-jefEXVNWeBg',
+        imagePath: 'https://images.unsplash.com/photo-1530479955903-b34ec1dc2636?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'Lorem ipsum',
         txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
     },
     {
-        imagePath: 'https://unsplash.com/photos/gray-and-white-dolphin-on-water-during-daytime-HGWqqacbcyc',
+        imagePath: 'https://images.unsplash.com/photo-1515276531454-08a3e4c9fbcb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'Lorem ipsum',
         txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
     }
@@ -32,6 +32,14 @@ const slides = [
 
 <section class="section section--hero">
 	<div class="swiper-container">
-        <Carousel data={ slides }/>
+        <Carousel data={ slides } height="70vh"/>
     </div>
 </section>
+
+<style>
+
+    .section--hero {
+        min-height: unset;
+    }
+
+</style>

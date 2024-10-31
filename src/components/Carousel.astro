@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-const { data } = Astro.props;
+const { data, height } = Astro.props;
 ---
 
 <div class="swiper-container">
@@ -8,7 +8,7 @@ const { data } = Astro.props;
         <div class="swiper-wrapper">
             {
                 data.map(item => (
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" style={ `height: ${ height }` }>
                         <Image src={ item.imagePath } alt="Image 1" class="slide__image" width="400" height="400" />
                         {
                             item.title ? (
@@ -31,10 +31,6 @@ const { data } = Astro.props;
 
 <style>
 
-    .swiper-slide {
-        height: 80vh;
-    } 
-
     .slide__image {
         height: 100%;
         object-fit: cover;
@@ -46,14 +42,34 @@ const { data } = Astro.props;
         color: var(--white);
         inset-block-end: 9rem;
         inset-inline-start: 6rem;
+        max-width: 50%;
         padding: 3rem;
         position: absolute;
-        max-width: 50%;
+        user-select: none;
     }
 
     .slide__title {
         font-size: 3rem;
         margin-block-end: 2rem;
+    }
+
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: var(--white);
+        opacity: .6;
+        transition: var(--default-transition);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .swiper-button-prev {
+        margin-inline-start: 1.5rem;
+    }
+
+    .swiper-button-next {
+        margin-inline-end: 1.5rem;
     }
 
 </style>
