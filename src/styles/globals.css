@@ -3,7 +3,7 @@
 :root {
     --white: #fff;
     --bg-color: #ebeef3;
-    --accent: #1E7DAA;
+    --accent: #2954c7; 
     --accent-medium: #0F648C;
     --accent-dark: #1A495F;
     --font-color: #292b31;
@@ -48,7 +48,7 @@ ul {
 
 .btn {
     border: 0;
-    padding: .75rem 1.5rem;
+    padding: 1rem 1.5rem;
     text-transform: uppercase;
 }
 

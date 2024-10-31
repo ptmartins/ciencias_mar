@@ -1,17 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import Footer from '../images/footer.png';
+---
+
 <footer class="footer">
-    <div class="footer__copyright">
-        <p>Copyright &copy; 2017 - Associação para as Ciências do Mar. Todos os direitos reservados.</p>
-    </div>
-    <div class="footer__social">
-        
+    <Image src={ Footer } alt="Footer" class="footer__banner"/>
+    <div class="footer__content">
+        <div class="footer__copyright">
+            <p>Copyright &copy; 2017 - Associação para as Ciências do Mar. Todos os direitos reservados.</p> 
+        </div>
+        <div class="footer__social">     
+        </div>
     </div>
 </footer>
 
 <style>
 
     .footer {
-        padding-block: 1.5rem;
-        padding-inline: 1.5rem;
+        color: var(--white);
     }
 
-</style>s
+    .footer__banner {
+        height: 420px;
+        object-fit: cover;
+        object-position: top;
+        width: 100%;
+    }
+
+    .footer__content {
+        background-color: var(--accent);
+        padding-block: 3rem;
+        padding-inline: 1.5rem;
+        margin-block-start: -10px;
+    }
+
+</style>
