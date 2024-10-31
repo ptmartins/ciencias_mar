@@ -12,6 +12,7 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.6.10",
     "astro": "^4.16.3",
-    "contentful": "^11.2.0"
+    "contentful": "^11.2.0",
+    "swiper": "10.0.0"
   }
 }
