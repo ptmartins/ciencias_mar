@@ -26,7 +26,7 @@ const links = [
             <p>Copyright &copy; 2017 - Associação para as Ciências do Mar. Todos os direitos reservados.</p> 
         </div>
         <div class="footer__social">     
-            <SocialMenu links={ links }/>
+            <SocialMenu links={ links } color="white" />
         </div>
     </div>
 </footer>
@@ -45,10 +45,13 @@ const links = [
     }
 
     .footer__content {
+        align-items: center;
         background-color: var(--accent);
+        display: flex;
+        justify-content: space-between;
+        margin-block-start: -10px;
         padding-block: 3rem;
         padding-inline: 1.5rem;
-        margin-block-start: -10px;
     }
 
 </style>
