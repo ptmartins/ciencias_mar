@@ -1,0 +1,18 @@
+---
+import SocialIcon from "./SocialIcon.astro";
+const { links } = Astro.props;
+---
+
+<div class="social">
+    <ul class="social__list">
+        {
+            links.map(link => (
+                <li class="social__item">
+                    <a href={ link.href } class="social__link">
+                        <SocialIcon network={ link.network } />
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</div>

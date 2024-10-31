@@ -1,6 +1,22 @@
 ---
 import { Image } from 'astro:assets';
 import Footer from '../images/footer.png';
+import SocialMenu from './SocialMenu.astro';
+
+const links = [
+    {
+        network: 'Facebook',
+        href: 'https://www.facebook.com/APCMONG/',
+    },
+    {
+        network: 'Twitter',
+        href: 'https://x.com/APCM_ONG',
+    },
+    {
+        network: 'Instagram',
+        href: 'https://www.instagram.com/apcm_ong/',
+    }
+]
 ---
 
 <footer class="footer">
@@ -10,6 +26,7 @@ import Footer from '../images/footer.png';
             <p>Copyright &copy; 2017 - Associação para as Ciências do Mar. Todos os direitos reservados.</p> 
         </div>
         <div class="footer__social">     
+            <SocialMenu links={ links }/>
         </div>
     </div>
 </footer>

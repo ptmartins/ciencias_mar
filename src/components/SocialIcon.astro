@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon/components';
+const { network } = Astro.props;
+const iconMap = {
+  facebook: 'mdi:facebook',
+  twitter: 'mdi:twitter',
+  instagram: 'mdi:instagram',
+  linkedin: 'mdi:linkedin',
+  github: 'mdi:github'
+};
+
+const iconName = iconMap[network.toLowerCase()];
+---
+
+<Icon name={ `${ iconName }` } />
