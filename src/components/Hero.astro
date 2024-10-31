@@ -1,76 +1,37 @@
 ---
 import { Image } from 'astro:assets';
+import Carousel from '../components/Carousel.astro';
 import Image1 from '../images/image1.jpg';
 import Image2 from '../images/image2.jpg';
 import Image3 from '../images/image3.jpg';
 import Image4 from '../images/image4.jpg';
+
+const slides = [
+    {
+        imagePath: 'https://images.unsplash.com/photo-1512164599836-a491ef79f6d5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Lorem ipsum',
+        txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
+    },
+    {
+        imagePath: 'https://unsplash.com/photos/a-whales-tail-flups-out-of-the-water-T-jAfseP0dc',
+        title: 'Lorem ipsum',
+        txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
+    },
+    {
+        imagePath: 'https://unsplash.com/photos/brown-fish-diving-in-blue-water-jefEXVNWeBg',
+        title: 'Lorem ipsum',
+        txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
+    },
+    {
+        imagePath: 'https://unsplash.com/photos/gray-and-white-dolphin-on-water-during-daytime-HGWqqacbcyc',
+        title: 'Lorem ipsum',
+        txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!'
+    }
+]
 ---
 
 <section class="section section--hero">
 	<div class="swiper-container">
-        <div class="swiper main">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <Image src={ Image1 } alt="Image 1" class="slide__image" />
-                    <div class="slide__overlay">
-                        <h2 class="slide__title">Lorem ipsum</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <Image src={ Image2 } alt="Image 2" class="slide__image" />
-                    <div class="slide__overlay">
-                        <h2 class="slide__title">Lorem ipsum</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <Image src={ Image3 } alt="Image 3" class="slide__image" />
-                    <div class="slide__overlay">
-                        <h2 class="slide__title">Lorem ipsum</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <Image src={ Image4 } alt="Image 4" class="slide__image" />
-                    <div class="slide__overlay">
-                        <h2 class="slide__title">Lorem ipsum</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
+        <Carousel data={ slides }/>
+    </div>
 </section>
-
-<script src="../lib/carousel.js"></script>
-
-<style>
-
-    .swiper-slide {
-        height: 80vh;
-    } 
-
-    .slide__image {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    .slide__overlay {
-        background-color: rgba(0, 0, 0, .5);
-        color: var(--white);
-        inset-block-end: 9rem;
-        inset-inline-start: 6rem;
-        padding: 3rem;
-        position: absolute;
-        max-width: 50%;
-    }
-
-    .slide__title {
-        font-size: 3rem;
-        margin-block-end: 2rem;
-    }
-
-</style>
