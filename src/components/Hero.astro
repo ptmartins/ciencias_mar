@@ -12,15 +12,31 @@ import Image4 from '../images/image4.jpg';
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <Image src={ Image1 } alt="Image 1" class="slide__image" />
+                    <div class="slide__overlay">
+                        <h2 class="slide__title">Lorem ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
+                    </div>
                 </div>
                 <div class="swiper-slide">
                     <Image src={ Image2 } alt="Image 2" class="slide__image" />
+                    <div class="slide__overlay">
+                        <h2 class="slide__title">Lorem ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
+                    </div>
                 </div>
                 <div class="swiper-slide">
                     <Image src={ Image3 } alt="Image 3" class="slide__image" />
+                    <div class="slide__overlay">
+                        <h2 class="slide__title">Lorem ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
+                    </div>
                 </div>
                 <div class="swiper-slide">
                     <Image src={ Image4 } alt="Image 4" class="slide__image" />
+                    <div class="slide__overlay">
+                        <h2 class="slide__title">Lorem ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia odit alias, hic, esse dolorum sunt officiis officia, delectus autem similique quos tenetur quia molestias possimus necessitatibus perferendis magnam iure! Nisi atque voluptate delectus eos neque similique voluptatem quia, vel vitae dolor iste deleniti ipsum illo qui praesentium ad minus quam inventore fugit reiciendis maiores provident odit? Quidem, a animi!</p>
+                    </div>
                 </div>
             </div>
             <div class="swiper-button-prev"></div>
@@ -40,6 +56,21 @@ import Image4 from '../images/image4.jpg';
         height: 100%;
         object-fit: cover;
         width: 100%;
+    }
+
+    .slide__overlay {
+        background-color: rgba(0, 0, 0, .5);
+        color: var(--white);
+        inset-block-end: 9rem;
+        inset-inline-start: 6rem;
+        padding: 3rem;
+        position: absolute;
+        max-width: 50%;
+    }
+
+    .slide__title {
+        font-size: 3rem;
+        margin-block-end: 2rem;
     }
 
 </style>
