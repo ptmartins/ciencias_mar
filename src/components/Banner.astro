@@ -1,0 +1,62 @@
+--- 
+import { Image } from 'astro:assets';
+const { page } = Astro.props;
+
+import teamBanner from '../images/banners/ocean1.png';
+
+let bannerImage,
+    altTxt,
+    title;
+
+
+switch(page) {
+    case 'team':
+        bannerImage = teamBanner;
+        altTxt = 'Team',
+        title = 'Team'
+        break;
+    default: 
+        bannerImage = teamBanner;
+        altTxt = 'Foobar';
+        break;
+}
+---
+
+<div class=`banner banner--${page}`>
+    <Image src={ bannerImage } alt={ altTxt } class="banner__image"/>
+    <div class="wrapper">
+        <h1 class="banner__title"> { title } </h1>
+    </div>
+</div>
+
+<style>
+    
+    .banner {
+        align-items: center;
+
+        display: flex;
+        height: 280px;
+        margin-block-end: 4.5rem;
+        overflow: hidden;
+        position: relative;
+
+        .wrapper {
+            flex: 1 0 0;
+        }
+    }
+
+    .banner__image {
+        filter: brightness(75%);
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .banner__title {
+        color: var(--white);
+        font-size: 6.2rem;
+    }
+
+</style>

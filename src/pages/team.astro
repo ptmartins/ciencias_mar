@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro';
+import Banner from '../components/Banner.astro';
 import { Image } from "astro:assets";
 import { teamEntries } from "../lib/contentful.js";
 import fallbackImage from '../images/unknown_user.svg';
@@ -11,31 +12,32 @@ const entries = teamData.reverse();
 
 <Layout>
 	<section class="section section--team">
-		<h1 class="page__title">A Equipa</h1>
+		<Banner page="team" />
 		
-		<div class="team">
-			{entries.map((item) => (
-				<div class="card">
-					<div class="card__thumb">
-						{item.fields.image?.fields?.file?.url ? (
-								<Image src={`https:${ item.fields.image?.fields?.file?.url }`} alt={ `Foto - ${ item.fields.name }` } width="300" height="180" class="thumb__image"/>
-							) : (
-								<Image src={ fallbackImage } alt={ `Foto - ${ item.fields.name }` } width="300" height="180" class="fallbackImage"/>
-							)
-						}
-					</div>
-					<div class="card__body">
-						<h2>{ item.fields.name }</h2>
-						<span class="role">{ item.fields.role }</span>
-						<div class="card__social">
-							{item.fields.email ? <span> { item.fields.email } </span> : null }
-							{item.fields.linkedin ? <span> { item.fields.linkedin } </span> : null }
+		<div class="wrapper">
+			<div class="team">
+				{entries.map((item) => (
+					<div class="card">
+						<div class="card__thumb">
+							{item.fields.image?.fields?.file?.url ? (
+									<Image src={`https:${ item.fields.image?.fields?.file?.url }`} alt={ `Foto - ${ item.fields.name }` } width="300" height="180" class="thumb__image"/>
+								) : (
+									<Image src={ fallbackImage } alt={ `Foto - ${ item.fields.name }` } width="300" height="180" class="fallbackImage"/>
+								)
+							}
+						</div>
+						<div class="card__body">
+							<h2>{ item.fields.name }</h2>
+							<span class="role">{ item.fields.role }</span>
+							<div class="card__social">
+								{item.fields.email ? <span> { item.fields.email } </span> : null }
+								{item.fields.linkedin ? <span> { item.fields.linkedin } </span> : null }
+							</div>
 						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</div>
-
 	</section>
 </Layout>
 

@@ -5,24 +5,25 @@ import logo from '../images/logo.webp';
 ---
 
 <header class="header">
-    <div class="wrapper wrapper--header">
-        <div class="logo">
-            <Image src={ logo } alt="APCM Logo" aria-hidden="true" class="logo__image"/>
-        </div>
-        <Navigation />
-        <div class="cta">
-            <button class="btn">Participar</button>
-            <button class="btn btn--cta">Donativos</button>
-        </div>
+    <div class="logo">
+        <Image src={ logo } alt="APCM Logo" aria-hidden="true" class="logo__image"/>
+    </div>
+    <Navigation />
+    <div class="cta">
+        <button class="btn">Participar</button>
+        <button class="btn btn--cta">Donativos</button>
     </div>
 </header>
 
 <style>
     
-    .wrapper--header {
+    .header {
         align-items: center;
         display: flex;
         justify-content: space-between;
+        margin-block-end: 1.5rem;
+        padding-block: 1.5rem;
+        padding-inline: 1.5rem;
     }
 
     .logo {
